@@ -10,7 +10,9 @@ for (i = 0; i < animalButtons.length; i++ ) {
 
 //build the query url with the q-variable empty...(because it will be supplied by the user??)
 var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q&limit=9&q=";
-var q = [];
+var searchTerm = $("#search-box").val();
+var buttonSearch = $(".buttons").this("#id");
+
 
 //some api shit happens here
 function myFunction() {
@@ -19,15 +21,18 @@ function myFunction() {
 
 //assign the search-box item to q, and add the value for q to the queryURL
 	$.ajax({
-		url: queryURL + q,
+		url: queryURL + searchTerm,
 		method: 'GET'
 
 //take the response from the server and add it to makeButtons
 	}).done(function(response){
 		$(".makeButtons").append(response);
 	});
-
 };
+
+$(document).ready(function() {
+	$(".buttons")
+});
 
 
 
