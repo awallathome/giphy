@@ -11,13 +11,14 @@ for (i = 0; i < animalButtons.length; i++ ) {
 //build the query url with the q-variable empty...(because it will be supplied by the user??)
 var queryURL = "https://api.giphy.com/v1/gifs/search?api_key=dc6zaTOxFJmzC&q&limit=9&q=";
 var searchTerm = $("#search-box").val();
-var buttonSearch = $(".buttons").this("#id");
+//var buttonSearch = $(".buttons").this("#id");
 
 
 //some api shit happens here
 function myFunction() {
 	
-	$("#search-box").text(appendTo("q"));
+//this is where I attempt to append the api response to the html...its not finished. 	
+	$("#search-box").text(appendTo());
 
 //assign the search-box item to q, and add the value for q to the queryURL
 	$.ajax({
